@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         DispatchQueue.global(qos: .background).async {
             var csvText = "Type, Count, Time\n"
             
-            let testsCount = 10
+            let testsCount = 50
             
             let decodeResults =   self.mesureSimpleDecode(itemsCount: objectsInTest, testsCount: testsCount)
             for result in decodeResults {

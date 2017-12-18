@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Writer: Codable {
+struct Writer: Decodable {
     var name:       String?
     var email:      String?
     var contact:    String?
@@ -25,3 +25,24 @@ extension Writer {
         isPublic    = dictionary["isPublic"] as? Bool
     }
 }
+
+// Uncomment for Decode with `init(from decoder: Decoder)`
+//extension Writer: Decodable {
+//    enum CodingKeys: String, CodingKey {
+//        case name
+//        case email
+//        case contact
+//        case years
+//        case isPublic
+//    }
+//
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        name        = try? values.decode(String.self, forKey: .name)
+//        email       = try? values.decode(String.self, forKey: .email)
+//        contact     = try? values.decode(String.self, forKey: .contact)
+//        years       = try? values.decode(Int.self, forKey: .years)
+//        isPublic    = try? values.decode(Bool.self, forKey: .isPublic)
+//    }
+//}
+
